@@ -1,0 +1,65 @@
+[
+  {
+    "id": "soft-forms",
+    "author": "Anya Chernykh",
+    "source": "https://unsplash.com/photos/two-lidded-ceramic-jars-with-three-legs-each-7jGvCol0Cz4",
+    "cdn": "https://images.unsplash.com/photo-1755401324208-7ead4696b351",
+    "width": 2200,
+    "height": 3300,
+    "bytes": 710987
+  },
+  {
+    "id": "light-studies",
+    "author": "Willian Justen de Vasconcellos",
+    "source": "https://unsplash.com/photos/modern-architectural-staircase-with-dramatic-light-and-shadows-MKgocPMj2uM",
+    "cdn": "https://images.unsplash.com/photo-1769008302026-f04182062d17",
+    "width": 2200,
+    "height": 1467,
+    "bytes": 645729
+  },
+  {
+    "id": "quiet-interiors",
+    "author": "Minh Pham",
+    "source": "https://unsplash.com/photos/green-leaf-plant-beside-wall-YAPZt8wxMO4",
+    "cdn": "https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14",
+    "width": 2200,
+    "height": 3300,
+    "bytes": 1797177
+  },
+  {
+    "id": "earthen-passages",
+    "author": "Rafael Peier",
+    "source": "https://unsplash.com/photos/beige-plaster-room-with-concrete-barrier-N69H0C1qgrM",
+    "cdn": "https://images.unsplash.com/photo-1789503801824-cbe330dfad59",
+    "width": 2200,
+    "height": 3300,
+    "bytes": 2201881
+  },
+  {
+    "id": "morning-ritual",
+    "author": "Kelly Sikkema",
+    "source": "https://unsplash.com/photos/a-vase-of-flowers-sitting-on-top-of-a-book-next-to-a-window-tP7rozoFHNk",
+    "cdn": "https://images.unsplash.com/photo-1728931710306-ec37430c7e66",
+    "width": 2200,
+    "height": 3300,
+    "bytes": 904341
+  },
+  {
+    "id": "glass-lines",
+    "author": "Declan Sun",
+    "source": "https://unsplash.com/photos/modern-staircase-with-glass-and-metal-architecture-_QkKu4Y60AA",
+    "cdn": "https://images.unsplash.com/photo-1778996369556-b610f9e03402",
+    "width": 2200,
+    "height": 1467,
+    "bytes": 453474
+  },
+  {
+    "id": "linen-and-ceramic",
+    "author": "Sixteen Miles Out",
+    "source": "https://unsplash.com/photos/a-vase-with-a-plant-in-it-next-to-some-books-CTixwor7zZs",
+    "cdn": "https://images.unsplash.com/photo-1699536813779-55557d54891a",
+    "width": 2200,
+    "height": 2750,
+    "bytes": 513002
+  }
+]

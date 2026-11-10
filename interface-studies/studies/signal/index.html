@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SIGNAL — Campaign overview · Interface Studies</title>
+  <meta name="description" content="An interactive campaign dashboard. Understand which campaigns need attention, and why.">
+  <meta name="theme-color" content="#DEDFDD">
+  <link rel="preload" href="/interface-studies/studies/signal/assets/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/interface-studies/studies/signal/assets/fonts/manrope-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/interface-studies/studies/signal/signal.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to dashboard</a>
+<div class="app">
+  <header class="masthead">
+    <a class="brand" href="/interface-studies/studies/signal/index.html" aria-label="SIGNAL overview"><span class="brand-icon"><i data-icon="activity"></i></span><span>SIGNAL<span class="brand-period">.</span></span></a>
+    <nav class="navigation" aria-label="Primary">
+      <button class="nav-item active" data-nav="overview" aria-label="Overview" aria-current="page"><i data-icon="layout-dashboard"></i><span>Overview</span></button>
+      <button class="nav-item" data-nav="campaigns" aria-label="Campaigns"><i data-icon="megaphone"></i><span>Campaigns</span></button>
+      <button class="nav-item" data-nav="reports" aria-label="Reports"><i data-icon="chart-no-axes-combined"></i><span>Reports</span></button>
+    </nav>
+    <div class="header-actions"><a class="collection-link icon-button" href="/" aria-label="Back to Interface Studies" title="Interface Studies"><i data-icon="arrow-up-right"></i></a><span class="avatar" role="img" aria-label="Alex Morgan, marketing lead">AM</span></div>
+  </header>
+  <main id="main" class="main">
+    <div class="page-heading">
+      <div><h1>Campaign overview</h1><p class="page-description">Spend, conversions, and campaign results.</p></div>
+      <div class="global-controls">
+        <label class="select-control project-control"><span id="project-initials" class="project-avatar">NS</span><span class="sr-only">Project</span><select id="project-select" aria-label="Project"><option value="nora">Nora Studio</option><option value="fieldwork">Fieldwork</option></select><i data-icon="chevron-down"></i></label>
+        <label class="select-control date-control"><i data-icon="calendar-days"></i><span class="sr-only">Reporting period</span><select id="period-select"><option value="week">8–14 Oct 2026</option><option value="recent">12–14 Oct 2026</option></select><i data-icon="chevron-down"></i></label>
+      </div>
+    </div>
+    <section class="metrics" aria-label="Overall campaign metrics. Select a metric to explore its trend.">
+      <article class="spend-card">
+        <div class="surface-heading"><h2>Total spend</h2><span class="context-pill">All campaigns</span></div>
+        <div class="spend-display"><strong id="total-spend">€18,400</strong><p id="spend-period">8–14 Oct 2026</p></div>
+        <div class="spend-footer"><button class="primary-button metric spend-trigger" data-metric="spend" aria-pressed="false"><span class="desktop-label">View spend trend</span><span class="mobile-label">View campaign spend</span><i data-icon="arrow-up-right"></i></button><span class="spend-context">4 campaigns <span aria-hidden="true">·</span> All channels</span></div>
+      </article>
+      <article class="efficiency-card">
+        <div class="surface-heading"><h2>Campaign efficiency</h2><span class="target-pill"><i data-icon="target"></i>€25 target CPA</span></div>
+        <div class="efficiency-values">
+          <button class="metric selected" data-metric="cpa" aria-pressed="true"><span class="metric-label">Cost per conversion<i data-icon="arrow-up-right"></i></span><strong id="total-cpa">€25.00</strong><span class="metric-foot">Blended average</span></button>
+          <button class="metric" data-metric="conversions" aria-pressed="false"><span class="metric-label">Conversions<i data-icon="arrow-up-right"></i></span><strong id="total-conversions">736</strong><span class="metric-foot">Across all channels</span></button>
+        </div>
+        <div class="attention-bar" id="attention-bar"><div class="attention-notice"><i data-icon="triangle-alert"></i><span><strong id="attention-count">2 campaigns</strong><span class="attention-caption"> above the €25.00 CPA target</span></span></div><button class="primary-button" id="review-highest">Review highest CPA<i data-icon="arrow-up-right"></i></button></div>
+      </article>
+    </section>
+    <div class="analysis-layout">
+      <div class="analysis-main">
+        <section class="chart-panel" aria-labelledby="chart-title">
+          <div class="chart-heading"><div><h2 id="chart-title">Cost per conversion</h2><p id="chart-subtitle">Social campaign · Daily average</p></div><label class="chart-scope"><span class="sr-only">Campaign shown in the chart</span><select id="chart-campaign"><option value="all">All campaigns</option><option value="search">Search</option><option value="social" selected>Social</option><option value="display">Display</option><option value="video">Video</option></select><i data-icon="chevron-down"></i></label></div>
+          <div class="chart-summary"><strong id="chart-value">€30.53</strong><span id="chart-change" class="trend-badge warning"><i data-icon="arrow-up-right"></i>22.1% above target</span><span id="chart-period">8–14 Oct</span></div>
+          <div class="plot-wrap"><div id="chart" class="plot"></div><div id="chart-tooltip" class="chart-tooltip" hidden></div></div>
+          <div class="chart-footer"><span class="chart-legend"><span class="line-key"></span><span id="legend-label">Social CPA</span><span class="target-legend"><span class="target-key"></span>Target €25</span></span><button class="text-button" id="view-daily">View daily data<i data-icon="arrow-up-right"></i></button></div>
+        </section>
+        <section class="campaign-section" aria-labelledby="campaign-title" id="campaigns">
+          <div class="campaign-heading"><div><h2 id="campaign-title">Campaigns <span id="campaign-count" class="count-badge">4</span></h2><p>Compare results by channel.</p></div><label class="status-filter"><i data-icon="sliders-horizontal"></i><span class="sr-only">Filter campaigns by status</span><select id="status-filter"><option value="all">All statuses</option><option value="warning">Above target</option><option value="good">On target</option></select><i data-icon="chevron-down"></i></label></div>
+          <div class="table-wrap"><table class="campaign-table"><caption class="sr-only">Campaign performance for the selected project and period. Choose a campaign to open its details.</caption><thead><tr><th scope="col">Campaign</th><th scope="col">Channel</th><th scope="col" class="numeric">Spend</th><th scope="col" class="numeric">Conversions</th><th scope="col" class="numeric">CPA</th><th scope="col">Status</th></tr></thead><tbody id="campaign-rows"></tbody></table></div>
+          <div id="mobile-campaigns" class="mobile-campaigns"></div>
+          <div id="filter-empty" class="filter-empty" hidden><p>No campaigns match this status.</p><button class="text-button" id="clear-filter">Show all campaigns</button></div>
+          <div class="table-footer"><span id="table-summary">4 campaigns · EUR</span><span>Target CPA <strong>€25.00</strong></span></div>
+        </section>
+      </div>
+      <aside id="campaign-details" class="details-panel" aria-label="Selected campaign details"></aside>
+    </div>
+    <footer class="app-footer"><span>SIGNAL <span class="footer-dot">/</span> Campaign performance overview.</span><span>Interface study 001 <span class="footer-dot">·</span> Local demo data</span></footer>
+  </main>
+</div>
+<dialog id="mobile-details" class="dialog mobile-details" aria-labelledby="mobile-details-title"><div id="mobile-details-content"></div></dialog>
+<dialog id="review-dialog" class="dialog review-dialog" aria-labelledby="review-title"><div class="dialog-header"><span class="dialog-eyebrow">CAMPAIGN REVIEW</span><button class="icon-button" data-close="review-dialog" aria-label="Close review"><i data-icon="x"></i></button></div><h2 id="review-title">Review Social</h2><p id="review-intro" class="dialog-description"></p><form id="review-form" novalidate><fieldset><legend>What’s your next step? <span aria-label="required">*</span></legend><label class="radio-option"><input type="radio" name="nextStep" value="Review audience targeting"><span><strong>Review audience targeting</strong><small>Check who sees this campaign.</small></span></label><label class="radio-option"><input type="radio" name="nextStep" value="Refresh the creative"><span><strong>Refresh the creative</strong><small>Revisit the message and visuals.</small></span></label><label class="radio-option"><input type="radio" name="nextStep" value="Keep monitoring"><span><strong>Keep monitoring</strong><small>Watch the trend before making changes.</small></span></label></fieldset><label class="notes-label" for="review-note">Review note <span>Optional</span></label><textarea id="review-note" rows="3" maxlength="500" placeholder="Add context for your next review."></textarea><p id="review-error" class="form-error" role="alert" hidden>Choose a next step before saving your review.</p><div class="review-hint"><i data-icon="circle-help"></i><span>Reviews are saved in this browser. Campaign budgets and delivery stay as they are.</span></div><div class="dialog-actions"><button type="button" class="secondary-button" data-close="review-dialog">Cancel</button><button type="submit" class="primary-button">Save review<i data-icon="check"></i></button></div></form></dialog>
+<dialog id="data-dialog" class="dialog data-dialog" aria-labelledby="data-title"><div class="dialog-header"><span class="dialog-eyebrow">DAILY PERFORMANCE</span><button class="icon-button" data-close="data-dialog" aria-label="Close daily data"><i data-icon="x"></i></button></div><h2 id="data-title">Social · Daily data</h2><p class="dialog-description" id="data-period"></p><div class="daily-table-wrap"><table class="daily-table"><thead><tr><th>Date</th><th class="numeric">Spend</th><th class="numeric">Conversions</th><th class="numeric">CPA</th></tr></thead><tbody id="daily-rows"></tbody></table></div></dialog>
+<dialog id="reports-dialog" class="dialog reports-dialog" aria-labelledby="report-title"><div class="dialog-header"><span class="dialog-eyebrow">PERFORMANCE REPORT</span><button class="icon-button" data-close="reports-dialog" aria-label="Close report"><i data-icon="x"></i></button></div><h2 id="report-title">Weekly snapshot</h2><p id="report-period" class="dialog-description"></p><div id="report-content"></div><button id="download-report" class="primary-button"><i data-icon="download"></i>Download CSV</button></dialog>
+<div class="toast" id="toast" role="status" hidden><i data-icon="circle-check"></i><span id="toast-text"></span><button id="undo-review">Undo</button><button class="icon-button" id="dismiss-toast" aria-label="Dismiss notification"><i data-icon="x"></i></button></div>
+<div id="live-announcement" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+<script type="module" src="/interface-studies/studies/signal/signal.js"></script>
+</body></html>

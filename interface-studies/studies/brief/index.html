@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BRIEF — Aural campaign plan · Interface Studies</title>
+  <meta name="description" content="An interactive AI-assisted workspace for reviewing, refining and approving a campaign brief.">
+  <meta name="theme-color" content="#F2F4F8">
+  <link rel="preload" href="/interface-studies/studies/brief/assets/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/interface-studies/studies/brief/brief.css">
+</head>
+<body>
+  <a class="skip-link" href="#campaign-document">Skip to campaign plan</a>
+  <header class="workspace-bar glass">
+    <div class="workspace-identity"><a class="brand" href="/interface-studies/studies/brief/index.html" aria-label="BRIEF workspace"><i data-icon="layers-2"></i><span>BRIEF</span></a><span class="bar-divider"></span><div class="project-name"><strong>Aural</strong><span>Wireless headphones launch</span></div></div>
+    <div class="workspace-actions"><span id="document-status" class="document-status"><i data-icon="pencil-line"></i><span>Draft</span></span><button class="primary-button" id="approve-brief"><i data-icon="check"></i><span>Approve brief</span></button><a class="collection-link icon-button" href="/" aria-label="Back to Interface Studies" title="Interface Studies"><i data-icon="arrow-up-right"></i></a></div>
+  </header>
+  <div class="mobile-switcher" aria-label="Supporting information"><button class="secondary-button" id="open-source" aria-haspopup="dialog" aria-controls="source-dialog"><i data-icon="panel-left"></i>Client brief</button><button class="secondary-button" id="open-inputs" aria-haspopup="dialog" aria-controls="input-dialog"><i data-icon="message-circle-question"></i>Needs your input<span id="mobile-input-count" class="number-badge">2</span></button></div>
+  <main class="workspace" aria-label="Campaign preparation workspace">
+    <div id="client-slot" class="client-slot">
+      <aside class="client-panel glass floating-panel" id="client-panel" aria-labelledby="client-title">
+        <div class="panel-heading"><div class="panel-title"><span class="panel-icon"><i data-icon="file-text"></i></span><h2 id="client-title">Client brief</h2></div><button class="icon-button panel-close" data-close="source-dialog" aria-label="Close client brief"><i data-icon="x"></i></button></div>
+        <div class="source-company"><span class="company-monogram" aria-hidden="true">a.</span><div><h3>Aural</h3><p>Independent audio brand</p></div><span class="source-tag">Source</span></div>
+        <p class="source-quote">“We’re launching our wireless headphones for people who work between home and the office. We need a clear campaign for the way their workday moves.”</p>
+        <dl class="source-facts"><div><dt>Budget</dt><dd>€24,000</dd></div><div><dt>Duration</dt><dd>4 weeks</dd></div></dl>
+        <div class="source-audience"><span class="small-label">Who we’re reaching</span><p>People working in a hybrid format, across home and shared workspaces.</p></div>
+        <div class="source-confirmations"><div><span class="small-label">Product benefits</span><p id="source-benefits" class="source-pending"><i data-icon="circle-help"></i>Not yet confirmed</p></div><div><span class="small-label">Campaign geography</span><p id="source-geography" class="source-pending"><i data-icon="circle-help"></i>Not yet confirmed</p></div></div>
+        <div class="source-footer"><i data-icon="shield-check"></i><p>Keep the creative grounded in what the client can confirm.</p></div>
+      </aside>
+      <a class="study-return" href="/"><i data-icon="arrow-left"></i>Interface Studies <span>/ 002</span></a>
+    </div>
+    <article class="document-panel" id="campaign-document" aria-labelledby="document-title">
+      <div class="document-header"><div class="document-kicker"><span><i data-icon="sparkles"></i>AI-assisted draft</span><span class="document-version">AURAL / LAUNCH</span></div><div class="document-title-row"><h1 id="document-title">Campaign plan</h1><span class="document-mark" aria-hidden="true"><i data-icon="headphones"></i></span></div><p>A draft plan for the four-week launch.</p></div>
+      <div id="review-banner" class="review-banner" role="status" hidden></div>
+      <div id="document-notices" class="document-notices"></div>
+      <div class="document-scroll" id="document-scroll" tabindex="-1"><div id="document-sections" class="document-sections"></div><div class="document-end"><i data-icon="circle-check"></i><span>Review the proposals and confirm the details before handoff.</span></div></div>
+      <footer class="document-footer"><span id="save-status" class="save-status"><i data-icon="check-check"></i><span>Saved in this browser</span></span><span class="document-footer-right"><span id="word-count"></span><button class="undo-button" id="undo-replacement" hidden><i data-icon="undo-2"></i>Undo replacement</button></span></footer>
+    </article>
+    <div id="input-slot" class="input-slot">
+      <aside class="input-panel glass floating-panel" id="input-panel" aria-labelledby="input-title">
+        <div class="panel-heading"><div class="panel-title"><span class="panel-icon"><i data-icon="message-circle-question"></i></span><h2 id="input-title">Needs your input</h2></div><button class="icon-button panel-close" data-close="input-dialog" aria-label="Close input panel"><i data-icon="x"></i></button></div>
+        <div class="input-progress"><span id="input-progress-label">Two details need confirmation.</span><span id="input-progress-count">0 / 2</span></div><div class="progress-track" aria-hidden="true"><span id="input-progress-fill"></span></div>
+        <div class="approval-errors" id="approval-errors" role="alert" hidden></div>
+        <form id="clarification-form" novalidate>
+          <div class="question" id="benefits-question"><label for="benefits-answer"><span class="question-number">01</span><strong>Which product benefits are confirmed?</strong></label><p class="question-description">Use client-approved facts, including any limits.</p><textarea id="benefits-answer" name="benefits" rows="4" maxlength="1200" placeholder="Add the client-approved product facts…" aria-describedby="benefits-impact benefits-error"></textarea><p class="field-error" id="benefits-error" hidden>Confirm the product benefits before approval.</p><p class="question-impact" id="benefits-impact"><i data-icon="arrow-up-right"></i>Informs Key message &amp; Deliverables</p></div>
+          <div class="question" id="geography-question"><label for="geography-answer"><span class="question-number">02</span><strong>Where will this campaign run?</strong></label><p class="question-description">Confirm the market and any language requirements.</p><input id="geography-answer" name="geography" type="text" maxlength="180" placeholder="e.g. United Kingdom" aria-describedby="geography-impact geography-error"><p class="field-error" id="geography-error" hidden>Confirm the campaign geography before approval.</p><p class="question-impact" id="geography-impact"><i data-icon="arrow-up-right"></i>Informs Audience &amp; Channels</p></div>
+          <button type="submit" class="primary-button update-button" id="update-plan" disabled><i data-icon="check"></i><span>Update plan</span></button><p id="answer-save-note" class="answer-save-note">Your answers become linked context.<br>Your edits stay in place.</p>
+        </form>
+      </aside>
+      <p class="context-note"><i data-icon="layers-2"></i>Client details stay linked to the plan.</p>
+    </div>
+  </main>
+  <div id="block-toolbar" class="block-toolbar glass" role="toolbar" aria-label="Tools for selected text block"><span id="tool-status" class="tool-status" hidden><i data-icon="loader-circle"></i><span>Rewriting…</span></span><div class="tool-actions"><button id="rewrite-block" data-transform="rewrite" title="Rewrite this block"><i data-icon="wand-sparkles"></i>Rewrite</button><button id="shorten-block" data-transform="shorten" title="Use a shorter version"><i data-icon="align-left"></i>Shorten</button><span class="tool-divider"></span><button id="keep-original" title="Restore the text from before the AI replacement">Keep original</button><button id="undo-context" hidden><i data-icon="undo-2"></i>Undo</button></div></div>
+  <dialog class="support-dialog" id="source-dialog" aria-labelledby="client-title"><div id="source-dialog-content"></div></dialog>
+  <dialog class="support-dialog" id="input-dialog" aria-labelledby="input-title"><div id="input-dialog-content"></div></dialog>
+  <div class="toast" id="toast" role="status" hidden><i data-icon="circle-check" id="toast-icon"></i><span id="toast-text"></span><button class="icon-button" id="dismiss-toast" aria-label="Dismiss notification"><i data-icon="x"></i></button></div>
+  <div class="sr-only" id="live-announcement" aria-live="polite" aria-atomic="true"></div>
+  <script type="module" src="/interface-studies/studies/brief/brief.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+export const stages=Object.freeze({
+  brief:{name:'Brief',number:'01',status:'Brief ready',version:'Brief v01',headline:'Bring the outside in.',title:'Start with the same picture.',description:'The goal, the audience and the deliverable live together. A clear starting point, before anyone opens a design file.',next:'review',nextLabel:'View first version',note:'A shared brief. A clear direction.'},
+  review:{name:'Review',number:'02',status:'In review',version:'v01',headline:'Bring the outside in.',title:'Feedback, right where it belongs.',description:'Nina asks for a more direct headline. Her comment stays beside the creative, so Lena knows exactly what to change.',next:'deliver',nextLabel:'View final version',note:'One comment. The right context.'},
+  deliver:{name:'Deliver',number:'03',status:'Approved',version:'v02',headline:'Make room for green.',title:'A final version everyone agrees on.',description:'Lena updates the headline in v02. Nina approves it. The latest file, the decision and the next step are all in the same place.',next:'brief',nextLabel:'Back to the brief',note:'The right version. Ready to hand over.'}
+});
+export const brief=Object.freeze({goal:'Introduce Common Ground’s indoor plant collection with a calm, approachable launch campaign.',audience:'People making a first home feel like their own.',deliverable:'One 1080 × 1350 social ad, ready for the autumn launch.'});
+export const initialState=()=>({team:'',email:'',created:false});
+export function normalise(value){const v=value&&typeof value==='object'?value:{};const result={team:typeof v.team==='string'?v.team.slice(0,80):'',email:typeof v.email==='string'?v.email.slice(0,254):'',created:false};result.created=v.created===true&&Object.keys(validate(result)).length===0;return result;}
+export function validate(s){const e={};if((s.team.trim().match(/[\p{L}\p{N}]/gu)||[]).length<2)e.team='Give your team a name with at least 2 letters or numbers.';if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.email.trim()))e.email='Enter a valid work email, like alex@studio.com.';return e;}
+export const stageKey=value=>Object.hasOwn(stages,value)?value:'review';

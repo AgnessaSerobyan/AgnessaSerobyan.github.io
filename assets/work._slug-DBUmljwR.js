@@ -1,0 +1,1 @@
+import{j as e,L as n}from"./index-DpDLKcxw.js";const s=()=>e.jsx("div",{className:"grid min-h-screen place-items-center",children:e.jsx(n,{to:"/",className:"underline",children:"← back home"})});export{s as notFoundComponent};
